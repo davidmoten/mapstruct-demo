@@ -1,16 +1,13 @@
 package com.github.davidmoten.mapstruct.demo;
 
-import java.util.Optional;
-
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
 import com.github.davidmoten.mapstruct.other.Person2;
 
 @Mapper
-public interface PersonMapper {
+public interface PersonMapper extends MapperBase {
     
     PersonMapper INSTANCE = Mappers.getMapper( PersonMapper.class );
 
@@ -20,13 +17,4 @@ public interface PersonMapper {
     @Mapping(target = "alias", source = "nickname", qualifiedByName="toOptional")
     Person1 convert(Person2 person);
     
-    @Named("fromOptional")
-    default <T> T map(Optional<T> value) {
-        return value.orElse(null);
-    }
-    
-    @Named("toOptional")
-    default <T> Optional<T> map(T value) {
-        return Optional.ofNullable(value);
-    }
 }
