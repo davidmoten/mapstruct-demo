@@ -13,6 +13,10 @@ public interface PersonMapper extends MapperBase {
 
     @Mapping(target = "nickname", source = "alias", qualifiedByName = "fromOptional")
     Person2 convert(Person1 person);
+    
+    // this also works:
+    // @Mapping(target = "nickname", expression = "java( person.alias().get() )")
+    // Person2 convert(Person1 person);
 
     @Mapping(target = "alias", source = "nickname", qualifiedByName = "toOptional")
     Person1 convert(Person2 person);
