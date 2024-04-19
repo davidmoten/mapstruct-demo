@@ -1,4 +1,4 @@
-package com.github.davidmoten.mapstruct.demo;
+package com.github.davidmoten.mapstruct.other;
 
 public class Person2 {
 
@@ -19,6 +19,10 @@ public class Person2 {
     }
     
     public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setNickname(String name) {
         this.name = name;
     }
     

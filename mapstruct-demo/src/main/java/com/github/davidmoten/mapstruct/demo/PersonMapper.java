@@ -4,12 +4,14 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import com.github.davidmoten.mapstruct.other.Person2;
+
 @Mapper
 public interface PersonMapper {
     
     PersonMapper INSTANCE = Mappers.getMapper( PersonMapper.class );
 
-    @Mapping(target = "nickname", source = "alias",)
+    @Mapping(target = "nickname", source = "alias")
     Person2 convert(Person1 person);
 
     @Mapping(target = "alias", source = "nickname")
