@@ -8,13 +8,13 @@ import com.github.davidmoten.mapstruct.other.Person2;
 
 @Mapper
 public interface PersonMapper extends MapperBase {
-    
-    PersonMapper INSTANCE = Mappers.getMapper( PersonMapper.class );
 
-    @Mapping(target = "nickname", source = "alias", qualifiedByName="fromOptional")
+    PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
+
+    @Mapping(target = "nickname", source = "alias", qualifiedByName = "fromOptional")
     Person2 convert(Person1 person);
 
-    @Mapping(target = "alias", source = "nickname", qualifiedByName="toOptional")
+    @Mapping(target = "alias", source = "nickname", qualifiedByName = "toOptional")
     Person1 convert(Person2 person);
-    
+
 }
