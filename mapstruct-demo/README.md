@@ -1,1 +1,0 @@
-# mapstruct-demo
