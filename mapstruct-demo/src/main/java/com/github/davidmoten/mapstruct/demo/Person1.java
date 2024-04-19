@@ -2,8 +2,8 @@ package com.github.davidmoten.mapstruct.demo;
 
 public class Person1 {
 
-    private String name;
-    private String alias;
+    private final String name;
+    private final String alias;
 
     public Person1(String name, String alias) {
         this.name = name;
@@ -18,11 +18,4 @@ public class Person1 {
         return alias;
     }
     
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
 }
