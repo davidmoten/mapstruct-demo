@@ -7,12 +7,12 @@ import org.mapstruct.Named;
 public interface MapperBase {
     
     @Named("fromOptional")
-    default <T> T map(Optional<T> value) {
+    default <T> T fromOptional(Optional<T> value) {
         return value.orElse(null);
     }
 
     @Named("toOptional")
-    default <T> Optional<T> map(T value) {
+    default <T> Optional<T> toOptional(T value) {
         return Optional.ofNullable(value);
     }
 }
