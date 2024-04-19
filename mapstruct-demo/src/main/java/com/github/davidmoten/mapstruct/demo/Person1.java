@@ -5,9 +5,9 @@ import java.util.Optional;
 public class Person1 {
 
     private String name;
-    private Optional<String> alias;
+    private Optional<? extends String> alias;
 
-    public Person1(String name, Optional<String> alias) {
+    public Person1(String name, Optional<? extends String> alias) {
         this.name = name;
         this.alias = alias;
     }
@@ -16,7 +16,7 @@ public class Person1 {
         return name;
     }
 
-    public Optional<String> alias() {
+    public Optional<? extends String> alias() {
         return alias;
     }
     
