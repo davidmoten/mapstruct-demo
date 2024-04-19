@@ -15,4 +15,5 @@ public interface MapperBase {
     default <T> Optional<T> toOptional(T value) {
         return Optional.ofNullable(value);
     }
+
 }
